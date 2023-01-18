@@ -1,8 +1,25 @@
 todos = []
 
-while 2 > 1:
-    user_prompt = "Enter a todo:"
+while True:
+    user_option = input('Do you want to add or show?: ')
+    user_option = user_option.strip()
 
-    todo = input(user_prompt)
-    todos.append(todo.capitalize())
-    print(todos)
+    match user_option:
+
+        case 'add':
+            todo = input("Enter a new todo: ")
+            todos.append(todo)
+
+        case 'show':
+            for i in todos:
+                print(i)
+
+        case 'exit':
+            break
+
+        case _:
+            print('You entered a unknow command')
+
+
+
+print('Bye humans')
