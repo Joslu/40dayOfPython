@@ -1,2 +1,24 @@
 # 40dayOfPython
-Learn Python in 40 days
+
+
+## Day 1
+- Print
+- Input
+- Variables
+
+## Day 2
+- while - loop
+- methods
+
+## Day 3
+- match-case
+- for-loops
+
+## Day 4
+- type-conversion
+- list-indices
+- tuples
+
+
+
+

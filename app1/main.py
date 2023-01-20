@@ -1,7 +1,7 @@
 todos = []
 
 while True:
-    user_option = input('Do you want to add or show?: ')
+    user_option = input('Do you want to add, show, edit or exit?: ')
     user_option = user_option.strip()
 
     match user_option:
@@ -16,6 +16,13 @@ while True:
 
         case 'exit':
             break
+
+        case 'edit':
+            print('Editing zone')
+            number = int(input("Number of the todo to edit?: "))
+            number = number - 1
+            new_todo = input("Enter a new todo: ")
+            todos[number] = new_todo
 
         case _:
             print('You entered a unknow command')
