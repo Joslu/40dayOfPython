@@ -1,7 +1,7 @@
 todos = []
 
 while True:
-    user_option = input('Do you want to add, show, edit or exit?: ')
+    user_option = input('Do you want to add, show, edit, complete,  or exit?: ')
     user_option = user_option.strip()
 
     match user_option:
@@ -11,8 +11,9 @@ while True:
             todos.append(todo)
 
         case 'show':
-            for i in todos:
-                print(i)
+
+            for index, todo in enumerate(todos):
+                print(f'{index + 1 }-{todo}')
 
         case 'exit':
             break
@@ -23,6 +24,10 @@ while True:
             number = number - 1
             new_todo = input("Enter a new todo: ")
             todos[number] = new_todo
+
+        case 'complete':
+            number = int(input("Number ot the todo to complete: "))
+            todos.pop(number)
 
         case _:
             print('You entered a unknow command')
