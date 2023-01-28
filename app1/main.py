@@ -1,4 +1,3 @@
-todos = []
 
 while True:
     user_option = input('Do you want to add, show, edit, complete,  or exit?: ')
@@ -7,10 +6,21 @@ while True:
     match user_option:
 
         case 'add':
-            todo = input("Enter a new todo: ")
-            todos.append(todo)
+            todo = input("Enter a new todo: ") + '\n'
 
+            file = open('files/todos.txt', 'r')
+            todos = file.readlines()
+            file.close()
+
+            todos.append(todo)
+            file = open('files/todos.txt', 'w')
+            file.writelines(todos)
+            file.close()
+        
         case 'show':
+
+            file = open('files/todos.txt', 'r')
+            todos = file.readlines()
 
             for index, todo in enumerate(todos):
                 print(f'{index + 1 }-{todo}')
